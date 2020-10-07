@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">MisDeudores</string>
+    <string name="registro">Registro</string>
+    <string name="nombre">Nombre</string>
+    <string name="correo">Correo Electrónicico</string>
+    <string name="telefono">Teléfono</string>
+    <string name="contraseña">Contraseña</string>
+    <string name="repContraseña">Repita Contraseña</string>
+    <string name="registrar">Registrar</string>
+    <string name="respuesta">Nombre: %s \nCorreo: %s \nTelefono: %s \nGenero: %s \nPasatiempos: %s\nCiudad de nacimiento: %s</string>
+    <string name="masculino">Masculino</string>
+    <string name="femenino">Femenino</string>
+    <string name="genero">Género</string>
+    <string name="pasatiempos">Pasatiempos</string>
+    <string name="nadar">Nadar</string>
+    <string name="cine">Cine</string>
+    <string name="comer">Comer</string>
+    <string name="lugarNacimiento">Lugar de nacimiento</string>
+
+    <string-array name="ciudadNacimiento">
+        <item>Seleccione una ciudad</item>
+        <item>Pasto</item>
+        <item>Medellín</item>
+        <item>Bogotá</item>
+        <item>Cali</item>
+        <item>Barranquilla</item>
+    </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="digiteNombre">Nombre</string>
+    <string name="valordeuda">Valor deuda</string>
+    <string name="guardar">Guardar</string>
+    <string name="buscar">Buscar</string>
+</resources>
