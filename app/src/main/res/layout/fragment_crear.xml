@@ -10,7 +10,8 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/nombreEditTextLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">>
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/nombreEditText"
@@ -23,31 +24,36 @@
         android:id="@+id/telefonoEditTextLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/telefono">
+        android:hint="@string/telefono"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">>
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/telefonoEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/telefono" />
+            android:inputType="number" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/valorDeudaEditTextLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">>
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/valorDeudaEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/valordeuda" />
+            android:hint="@string/valordeuda"
+            android:inputType="number" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/guardarButton"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#03A9F4"
-        android:text="@string/guardar" />
+        android:layout_height="45dp"
+        android:background="#FFFFFF"
+        android:text="@string/guardar"
+        android:textColor="#FFFFFF"
+        android:translationY="8dp" />
 </LinearLayout>

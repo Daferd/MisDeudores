@@ -12,7 +12,7 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
-        regButton.setOnClickListener {
+        registrar_button.setOnClickListener {
             val intent = Intent(this, RegistroActivity::class.java)
             intent.putExtra("numero", 1)
             startActivity(intent)

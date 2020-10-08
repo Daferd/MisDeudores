@@ -17,6 +17,7 @@
     <string name="cine">Cinema</string>
     <string name="comer">Eat</string>
     <string name="lugarNacimiento">City of Birth</string>
+    <string name="crear">Crear</string>
 
     <string-array name="ciudadNacimiento">
         <item>Choose city</item>

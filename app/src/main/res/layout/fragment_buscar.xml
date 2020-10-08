@@ -8,37 +8,44 @@
     tools:context=".ui.buscar.buscarFragment">
 
     <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/nombreBuscarTextInputLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/nombreBuscarTextView"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:hint="@string/nombre" />
+            android:hint="@string/digiteNombre" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/buscarButton"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#03A9F4"
-        android:text="@string/buscar" />
+        android:layout_height="45dp"
+        android:background="#2196F3"
+        android:text="@string/buscar"
+        android:textColor="@android:color/white"
+        android:translationY="8dp" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/telefonoTextView"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:text="@string/telefono"
         android:textColor="#000000"
-        android:textSize="24sp" />
+        android:textSize="24sp"
+        android:translationY="16dp" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/ValorDeudaTextView"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:text="@string/valordeuda"
         android:textColor="#FF0000"
-        android:textSize="24sp" />
+        android:textSize="24sp"
+        android:translationY="24dp" />
 
 </LinearLayout>
