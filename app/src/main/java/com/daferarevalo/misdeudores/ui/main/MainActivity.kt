@@ -24,18 +24,18 @@ class MainActivity() : AppCompatActivity() {
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.menu_overflow, menu)
+        menuInflater.inflate(R.menu.menu, menu)
         return true
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         transaction = manager.beginTransaction()
         when (item.itemId) {
-            R.id.menu_crear -> {
+            R.id.nav_crear -> {
                 val creaFragment = crearFragment()
                 transaction.replace(R.id.contenedor, creaFragment).commit()
             }
-            R.id.menu_buscar -> {
+            R.id.nav_buscar -> {
                 val buscaFragment = buscarFragment()
                 transaction.replace(R.id.contenedor, buscaFragment).commit()
 

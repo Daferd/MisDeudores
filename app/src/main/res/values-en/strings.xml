@@ -18,6 +18,8 @@
     <string name="comer">Eat</string>
     <string name="lugarNacimiento">City of Birth</string>
     <string name="crear">Crear</string>
+    <string name="actualizar">Actualizar</string>
+    <string name="borrar">Borrar</string>
 
     <string-array name="ciudadNacimiento">
         <item>Choose city</item>

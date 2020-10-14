@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/nav_crear">
+
+    <fragment
+        android:id="@+id/nav_actualizar"
+        android:name="com.daferarevalo.misdeudores.ui.actualizar.ActualizarFragment"
+        android:label="@string/actualizar"
+        tools:layout="@layout/fragment_actualizar" />
+    <fragment
+        android:id="@+id/nav_borrar"
+        android:name="com.daferarevalo.misdeudores.ui.borrar.BorrarFragment"
+        android:label="@string/borrar"
+        tools:layout="@layout/fragment_borrar" />
+    <fragment
+        android:id="@+id/nav_buscar"
+        android:name="com.daferarevalo.misdeudores.ui.buscar.buscarFragment"
+        android:label="@string/buscar"
+        tools:layout="@layout/fragment_buscar" />
+    <fragment
+        android:id="@+id/nav_crear"
+        android:name="com.daferarevalo.misdeudores.ui.crear.crearFragment"
+        android:label="@string/crear"
+        tools:layout="@layout/fragment_crear" />
+</navigation>
