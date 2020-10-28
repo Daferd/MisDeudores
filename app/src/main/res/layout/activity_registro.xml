@@ -76,7 +76,7 @@
             app:layout_constraintTop_toBottomOf="@+id/correoEditText" />
 
         <EditText
-            android:id="@+id/contraseñaEditText"
+            android:id="@+id/contrasenaEditText"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -92,7 +92,7 @@
             app:layout_constraintTop_toBottomOf="@+id/telefonoEditText" />
 
         <EditText
-            android:id="@+id/repContraseñaEditText"
+            android:id="@+id/repContrasenaEditText"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -105,7 +105,7 @@
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/contraseñaEditText" />
+            app:layout_constraintTop_toBottomOf="@+id/contrasenaEditText" />
 
         <TextView
             android:id="@+id/textView3"
@@ -119,7 +119,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/repContraseñaEditText" />
+            app:layout_constraintTop_toBottomOf="@+id/repContrasenaEditText" />
 
         <RadioGroup
             android:id="@+id/radioGroup2"

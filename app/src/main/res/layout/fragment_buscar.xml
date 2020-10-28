@@ -14,7 +14,7 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/nombreBuscarTextView"
+            android:id="@+id/nombreBuscarEditText"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:hint="@string/digiteNombre" />
