@@ -25,4 +25,9 @@
         android:name="com.daferarevalo.misdeudores.ui.crear.crearFragment"
         android:label="@string/crear"
         tools:layout="@layout/fragment_crear" />
+    <fragment
+        android:id="@+id/listaFragment"
+        android:name="com.daferarevalo.misdeudores.ui.lista.ListaFragment"
+        android:label="fragment_lista"
+        tools:layout="@layout/fragment_lista" />
 </navigation>

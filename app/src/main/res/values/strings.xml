@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MisDeudores</string>
+    <string name="app_name">Mis Deudores</string>
     <string name="registro">Registro</string>
     <string name="nombre">Nombre</string>
     <string name="correo">Correo Electrónicico</string>
@@ -46,10 +46,12 @@
     <string name="actualizar">Actualizar</string>
     <string name="borrar">Borrar</string>
     <string name="title_activity_bottom">MainActivity</string>
-    <string name="title_home">Home</string>
+
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
     <string name="title_activity_tabbed">TabbedActivity</string>
     <string name="tab_text_1">Tab 1</string>
     <string name="tab_text_2">Tab 2</string>
+    <string name="lista">Lista</string>
+    <string name="iniciarSesion">Iniciar Sesión</string>
 </resources>

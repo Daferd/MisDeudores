@@ -32,7 +32,7 @@ class ListaFragment : Fragment() {
         binding.deudoresRecyclerView.layoutManager =
             LinearLayoutManager(context, RecyclerView.VERTICAL, false)
         binding.deudoresRecyclerView.setHasFixedSize(true)
-        val deudoresRVAdapter = DeudoresRVAdapter(listDeudores as ArrayList<Deudor>)
+          val deudoresRVAdapter = DeudoresRVAdapter(listDeudores as ArrayList<Deudor>)
 
         binding.deudoresRecyclerView.adapter = deudoresRVAdapter
 

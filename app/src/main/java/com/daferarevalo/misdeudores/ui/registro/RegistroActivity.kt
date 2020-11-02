@@ -19,7 +19,7 @@ class RegistroActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_registro)
 
-        var datosRecibidos = intent.extras
+        val datosRecibidos = intent.extras
         val numeroEnviado = datosRecibidos?.getInt("numero")
         Toast.makeText(this, "El numero enviado es $numeroEnviado", Toast.LENGTH_SHORT).show()
 
