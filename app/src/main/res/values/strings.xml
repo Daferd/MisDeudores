@@ -2,7 +2,7 @@
     <string name="app_name">Mis Deudores</string>
     <string name="registro">Registro</string>
     <string name="nombre">Nombre</string>
-    <string name="correo">Correo Electrónicico</string>
+    <string name="correo">Correo Electrónico</string>
     <string name="telefono">Teléfono</string>
     <string name="contraseña">Contraseña</string>
     <string name="repContraseña">Repita Contraseña</string>
@@ -16,6 +16,10 @@
     <string name="cine">Cine</string>
     <string name="comer">Comer</string>
     <string name="lugarNacimiento">Lugar de nacimiento</string>
+    <string name="ingreseNombre">Ingrese un nombre</string>
+    <string name="ingreseCorreo">Ingrese un correo</string>
+    <string name="ingreseContrasena">Ingrese una contraseña</string>
+    <string name="ingreseRepContrasena">Repita su contraseña</string>
 
     <string-array name="ciudadNacimiento">
         <item>Seleccione una ciudad</item>
@@ -54,4 +58,5 @@
     <string name="tab_text_2">Tab 2</string>
     <string name="lista">Lista</string>
     <string name="iniciarSesion">Iniciar Sesión</string>
+    <string name="cerrarSesion">Cerrar sesión</string>
 </resources>

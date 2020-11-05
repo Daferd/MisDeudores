@@ -10,6 +10,7 @@ import com.daferarevalo.misdeudores.MisDeudores
 import com.daferarevalo.misdeudores.R
 import com.daferarevalo.misdeudores.data.dataBase.dao.DeudorDAO
 import com.daferarevalo.misdeudores.databinding.FragmentBuscarBinding
+import kotlinx.android.synthetic.main.fragment_buscar.*
 
 class buscarFragment : Fragment() {
 
@@ -30,19 +31,22 @@ class buscarFragment : Fragment() {
         binding.buscarButton.setOnClickListener {
             val nombre = binding.nombreBuscarEditText.text.toString()
 
-            val deudorDAO: DeudorDAO = MisDeudores.database.DeudorDAO()
-            val deudor = deudorDAO.searchDeudor(nombre)
-
-            if (deudor != null) {
-                binding.telefonoTextView.text = deudor.telefono
-                binding.ValorDeudaTextView.text = deudor.deuda.toString()
+            if (nombre.isEmpty()) {
+                nombreBuscarTextInputLayout.error = getString(R.string.buscar)
             } else {
-                Toast.makeText(context, "No Existe", Toast.LENGTH_SHORT).show()
+                nombreBuscarTextInputLayout.error = null
+                val deudorDAO: DeudorDAO = MisDeudores.database.DeudorDAO()
+                val deudor = deudorDAO.searchDeudor(nombre)
+
+                if (deudor != null) {
+                    binding.telefonoTextView.setText(deudor.telefono)
+                    binding.ValorDeudaTextView.setText(deudor.deuda?.toString())
+                } else {
+                    Toast.makeText(context, "No Existe", Toast.LENGTH_SHORT).show()
+                }
             }
         }
     }
 
-    companion object {
-
-    }
+    companion object
 }

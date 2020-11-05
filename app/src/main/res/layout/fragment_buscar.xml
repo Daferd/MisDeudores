@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:padding="8dp"
     tools:context=".ui.buscar.buscarFragment">
@@ -11,7 +12,8 @@
         android:id="@+id/nombreBuscarTextInputLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        app:errorEnabled="true">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/nombreBuscarEditText"
@@ -24,28 +26,40 @@
     <Button
         android:id="@+id/buscarButton"
         android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:background="#2196F3"
+        android:layout_height="55dp"
         android:text="@string/buscar"
         android:textColor="@android:color/white"
-        android:translationY="8dp" />
+        android:layout_marginTop="8dp" />
 
-    <TextView
-        android:id="@+id/telefonoTextView"
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:text="@string/telefono"
-        android:textColor="#000000"
-        android:textSize="24sp"
-        android:translationY="16dp" />
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp">
 
-    <TextView
-        android:id="@+id/ValorDeudaTextView"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/telefonoTextView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="@string/telefono"
+            android:textSize="18sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:text="@string/valordeuda"
-        android:textColor="#FF0000"
-        android:textSize="24sp"
-        android:translationY="24dp" />
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/ValorDeudaTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/valordeuda"
+            android:textColor="@android:color/holo_red_dark"
+            android:textColorHint="@color/colorPrimaryDark"
+            android:textSize="18sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
 
 </LinearLayout>

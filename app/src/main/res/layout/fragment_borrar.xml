@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:padding="12dp"
     tools:context=".ui.borrar.BorrarFragment">
 
     <!-- TODO: Update blank fragment layout -->
@@ -11,19 +12,21 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/nombreBorrarEditTextLayout"
         android:layout_width="match_parent"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_height="wrap_content">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/nombreBorrarEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="hint" />
+            android:hint="@string/nombre" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:id="@+id/borrarButton"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Button" />
+        android:layout_height="55dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/borrar" />
 
 </LinearLayout>

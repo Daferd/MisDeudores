@@ -48,11 +48,12 @@ class ActualizarFragment : Fragment() {
                     Toast.makeText(context, "No existe", Toast.LENGTH_SHORT).show()
                 }
             } else { //actualizando
-                var deudor = Deudor(idDeudor, nombre, telefono, valor.toLong())
+                val deudor = Deudor(idDeudor, nombre, telefono, valor.toLong())
 
                 deudorDAO.updateDeudor(deudor)
                 isSearching = true
                 binding.modificarButton.text = getString(R.string.buscar)
+                Toast.makeText(context, "Actualizado", Toast.LENGTH_SHORT).show()
             }
 
         }
@@ -60,7 +61,5 @@ class ActualizarFragment : Fragment() {
 
     }
 
-    companion object {
-
-    }
+    companion object
 }

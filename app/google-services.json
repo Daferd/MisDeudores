@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1088336293152",
+    "firebase_url": "https://misdeudores-96eea.firebaseio.com",
+    "project_id": "misdeudores-96eea",
+    "storage_bucket": "misdeudores-96eea.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1088336293152:android:e00f798611aa28ee933b45",
+        "android_client_info": {
+          "package_name": "com.daferarevalo.misdeudores"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1088336293152-1utl892elo84uclvlv9f25tvkpo55hol.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.daferarevalo.misdeudores",
+            "certificate_hash": "140fa5712c6827c9359a3f199259e68e6e5c2603"
+          }
+        },
+        {
+          "client_id": "1088336293152-o71nkhs43mi9eq6aubn9fh4fvhbr7826.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA-fKyMP7kwZyJdHJjsOk6s6O4vvKAQV_c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1088336293152-o71nkhs43mi9eq6aubn9fh4fvhbr7826.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

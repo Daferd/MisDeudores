@@ -4,14 +4,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="8dp"
+    android:padding="12dp"
     tools:context=".ui.crear.crearFragment">
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/nombreEditTextLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">>
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/nombreEditText"
@@ -25,7 +25,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/telefono"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">>
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/telefonoEditText"
@@ -38,7 +38,7 @@
         android:id="@+id/valorDeudaEditTextLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">>
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/valorDeudaEditText"
@@ -51,9 +51,7 @@
     <Button
         android:id="@+id/guardarButton"
         android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:background="#FFFFFF"
+        android:layout_height="55dp"
         android:text="@string/guardar"
-        android:textColor="#FFFFFF"
-        android:translationY="8dp" />
+        android:layout_marginTop="8dp" />
 </LinearLayout>

@@ -34,13 +34,12 @@ class BorrarFragment : Fragment() {
 
             if (deudor != null) {
                 deudorDAO.deleteDeudor(deudor)
+                Toast.makeText(context, "Borrado", Toast.LENGTH_SHORT).show()
             } else {
                 Toast.makeText(context, "No Existe", Toast.LENGTH_SHORT).show()
             }
         }
     }
 
-    companion object {
-
-    }
+    companion object
 }

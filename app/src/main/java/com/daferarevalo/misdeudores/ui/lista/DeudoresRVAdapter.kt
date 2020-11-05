@@ -29,10 +29,8 @@ class DeudoresRVAdapter(var deudoresList: ArrayList<Deudor>) :
     class DeudoresViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val binding = DeudoresItemBinding.bind(itemView)
         fun bindDeudor(deudor: Deudor) {
-            binding.nombreTextView.text = deudor.nombre
+            binding.nombreTextView.text = deudor.nombre.toString()
             binding.valorTextView.text = deudor.deuda.toString()
         }
     }
-
-
 }
