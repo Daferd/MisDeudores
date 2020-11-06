@@ -20,6 +20,9 @@
     <string name="ingreseCorreo">Ingrese un correo</string>
     <string name="ingreseContrasena">Ingrese una contraseña</string>
     <string name="ingreseRepContrasena">Repita su contraseña</string>
+    <string name="ingreseTelefono">Ingrese un numero de telefono</string>
+    <string name="ingreseValorDeuda">Ingrese el valor de la deuda</string>
+    <string name="actualizar">Actualizar</string>
 
     <string-array name="ciudadNacimiento">
         <item>Seleccione una ciudad</item>
@@ -29,33 +32,16 @@
         <item>Cali</item>
         <item>Barranquilla</item>
     </string-array>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
     <string name="digiteNombre">Nombre</string>
     <string name="valordeuda">Valor deuda</string>
     <string name="guardar">Guardar</string>
     <string name="buscar">Buscar</string>
     <string name="crear">Crear</string>
-    <string name="title_activity_drawer">DrawerActivity</string>
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Android Studio</string>
-    <string name="nav_header_subtitle">android.studio@android.com</string>
-    <string name="nav_header_desc">Navigation header</string>
-    <string name="action_settings">Settings</string>
 
-    <string name="menu_home">Home</string>
-    <string name="menu_gallery">Gallery</string>
-    <string name="menu_slideshow">Slideshow</string>
-    <string name="actualizar">Actualizar</string>
+
     <string name="borrar">Borrar</string>
-    <string name="title_activity_bottom">MainActivity</string>
 
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
-    <string name="title_activity_tabbed">TabbedActivity</string>
-    <string name="tab_text_1">Tab 1</string>
-    <string name="tab_text_2">Tab 2</string>
     <string name="lista">Lista</string>
     <string name="iniciarSesion">Iniciar Sesión</string>
     <string name="cerrarSesion">Cerrar sesión</string>

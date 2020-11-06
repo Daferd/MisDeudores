@@ -10,6 +10,7 @@ import com.daferarevalo.misdeudores.MisDeudores
 import com.daferarevalo.misdeudores.R
 import com.daferarevalo.misdeudores.data.dataBase.dao.DeudorDAO
 import com.daferarevalo.misdeudores.databinding.FragmentBorrarBinding
+import kotlinx.android.synthetic.main.fragment_borrar.*
 
 
 class BorrarFragment : Fragment() {
@@ -29,14 +30,20 @@ class BorrarFragment : Fragment() {
 
         binding.borrarButton.setOnClickListener {
             val nombre = binding.nombreBorrarEditText.text.toString()
-            val deudorDAO: DeudorDAO = MisDeudores.database.DeudorDAO()
-            val deudor = deudorDAO.searchDeudor(nombre)
 
-            if (deudor != null) {
-                deudorDAO.deleteDeudor(deudor)
-                Toast.makeText(context, "Borrado", Toast.LENGTH_SHORT).show()
+            if (nombre.isBlank() || nombre.isEmpty()) {
+                nombreBorrarEditTextLayout.error = getString(R.string.ingreseNombre)
             } else {
-                Toast.makeText(context, "No Existe", Toast.LENGTH_SHORT).show()
+                nombreBorrarEditTextLayout.error = null
+                val deudorDAO: DeudorDAO = MisDeudores.database.DeudorDAO()
+                val deudor = deudorDAO.searchDeudor(nombre)
+
+                if (deudor != null) {
+                    deudorDAO.deleteDeudor(deudor)
+                    Toast.makeText(context, "Borrado", Toast.LENGTH_SHORT).show()
+                } else {
+                    Toast.makeText(context, "No Existe", Toast.LENGTH_SHORT).show()
+                }
             }
         }
     }

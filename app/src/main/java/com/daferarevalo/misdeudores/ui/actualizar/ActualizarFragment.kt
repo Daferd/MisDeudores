@@ -11,6 +11,7 @@ import com.daferarevalo.misdeudores.MisDeudores
 import com.daferarevalo.misdeudores.R
 import com.daferarevalo.misdeudores.data.dataBase.entities.Deudor
 import com.daferarevalo.misdeudores.databinding.FragmentActualizarBinding
+import kotlinx.android.synthetic.main.fragment_actualizar.*
 
 class ActualizarFragment : Fragment() {
 
@@ -33,27 +34,32 @@ class ActualizarFragment : Fragment() {
             val telefono = binding.telefonoEditText.text.toString()
             val valor = binding.valorEditText.text.toString()
 
-            val deudorDAO = MisDeudores.database.DeudorDAO()
-            val deudor = deudorDAO.searchDeudor(nombre)
-
-            if (isSearching) { //buscando
+            if (nombre.isEmpty() || nombre.isBlank()) {
+                nombreBuscarLayout.error = getString(R.string.ingreseNombre)
+            } else {
+                nombreBuscarLayout.error = null
+                val deudorDAO = MisDeudores.database.DeudorDAO()
                 val deudor = deudorDAO.searchDeudor(nombre)
-                if (deudor != null) {
-                    isSearching = false
-                    binding.modificarButton.text = getString(R.string.actualizar)
-                    idDeudor = deudor.id
-                    binding.telefonoEditText.setText(deudor.telefono)
-                    binding.valorEditText.setText(deudor.deuda?.toString())
-                } else {
-                    Toast.makeText(context, "No existe", Toast.LENGTH_SHORT).show()
-                }
-            } else { //actualizando
-                val deudor = Deudor(idDeudor, nombre, telefono, valor.toLong())
 
-                deudorDAO.updateDeudor(deudor)
-                isSearching = true
-                binding.modificarButton.text = getString(R.string.buscar)
-                Toast.makeText(context, "Actualizado", Toast.LENGTH_SHORT).show()
+                if (isSearching) { //buscando
+                    val deudor = deudorDAO.searchDeudor(nombre)
+                    if (deudor != null) {
+                        isSearching = false
+                        binding.modificarButton.text = getString(R.string.actualizar)
+                        idDeudor = deudor.id
+                        binding.telefonoEditText.setText(deudor.telefono)
+                        binding.valorEditText.setText(deudor.deuda?.toString())
+                    } else {
+                        Toast.makeText(context, "No existe", Toast.LENGTH_SHORT).show()
+                    }
+                } else { //actualizando
+                    val deudor = Deudor(idDeudor, nombre, telefono, valor.toLong())
+
+                    deudorDAO.updateDeudor(deudor)
+                    isSearching = true
+                    binding.modificarButton.text = getString(R.string.buscar)
+                    Toast.makeText(context, "Actualizado", Toast.LENGTH_SHORT).show()
+                }
             }
 
         }

@@ -23,7 +23,12 @@ class DeudoresRVAdapter(var deudoresList: ArrayList<Deudor>) :
     }
 
     override fun getItemCount(): Int {
-        return deudoresList.size
+        if (deudoresList.isNullOrEmpty()) {
+            return 0
+        } else {
+            return deudoresList.size
+        }
+
     }
 
     class DeudoresViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {

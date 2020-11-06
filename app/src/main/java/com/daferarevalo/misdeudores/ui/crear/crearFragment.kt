@@ -34,14 +34,27 @@ class crearFragment : Fragment() {
         guardarButton.setOnClickListener {
             val nombre = nombreEditText.text.toString()
             val telefono = telefonoEditText.text.toString()
-            val valor = valorDeudaEditText.text.toString().toLong()
+            val valor = valorDeudaEditText.text.toString()
 
-            val deudor = Deudor(NULL, nombre, telefono, valor)
-            //Log.d("nombre",deudor.nombre)
-            val deudorDAO: DeudorDAO = MisDeudores.database.DeudorDAO()
+            if (nombre.isEmpty() || nombre.isBlank()) {
+                nombreEditTextLayout.error = getString(R.string.ingreseNombre)
+            } else if (telefono.isEmpty() || telefono.isBlank()) {
+                nombreEditTextLayout.error = null
+                telefonoEditTextLayout.error = getString(R.string.ingreseTelefono)
+            } else if (valor.isEmpty() || valor.isBlank()) {
+                nombreEditTextLayout.error = null
+                telefonoEditTextLayout.error = null
+                valorDeudaEditTextLayout.error = getString(R.string.ingreseValorDeuda)
+            } else {
+                nombreEditTextLayout.error = null
+                telefonoEditTextLayout.error = null
+                valorDeudaEditTextLayout.error = null
+                val deudor = Deudor(NULL, nombre, telefono, valor.toLong())
+                val deudorDAO: DeudorDAO = MisDeudores.database.DeudorDAO()
 
-            deudorDAO.insertDeudor(deudor)
-            Toast.makeText(context, "Guardado", Toast.LENGTH_SHORT).show()
+                deudorDAO.insertDeudor(deudor)
+                Toast.makeText(context, "Guardado", Toast.LENGTH_SHORT).show()
+            }
         }
     }
 

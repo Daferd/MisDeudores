@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:padding="12dp"
     tools:context=".ui.borrar.BorrarFragment">
@@ -13,7 +14,8 @@
         android:id="@+id/nombreBorrarEditTextLayout"
         android:layout_width="match_parent"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        app:errorEnabled="true">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/nombreBorrarEditText"
