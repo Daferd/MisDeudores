@@ -18,5 +18,5 @@ interface DeudorDAO {
     fun updateDeudor(deudor: Deudor)
 
     @Query("SELECT * FROM tabla_deudor")
-    fun getDeudores(): List<Deudor>
+    fun getDeudores(): MutableList<Deudor>
 }

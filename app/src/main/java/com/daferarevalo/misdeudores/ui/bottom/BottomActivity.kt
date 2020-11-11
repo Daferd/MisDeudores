@@ -26,11 +26,11 @@ class BottomActivity : AppCompatActivity() {
         // menu should be considered as top level destinations.
         val appBarConfiguration = AppBarConfiguration(
             setOf(
+                R.id.listaFragment,
                 R.id.nav_crear,
                 R.id.nav_buscar,
                 R.id.nav_actualizar,
-                R.id.nav_borrar,
-                R.id.listaFragment
+                R.id.nav_borrar
             )
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
@@ -57,5 +57,10 @@ class BottomActivity : AppCompatActivity() {
         val intent = Intent(this, LoginActivity::class.java)
         startActivity(intent)
         finish()
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        goToLoginActivity()
     }
 }

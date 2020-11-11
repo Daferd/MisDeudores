@@ -15,7 +15,8 @@ import java.util.*
 
 class ListaFragment : Fragment() {
     private lateinit var binding: FragmentListaBinding
-    var listDeudores: List<Deudor> = emptyList()
+    private lateinit var deudoresRVAdapter: DeudoresRVAdapter
+    var listDeudores: MutableList<Deudor> = mutableListOf()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -35,9 +36,42 @@ class ListaFragment : Fragment() {
         val deudorDAO = MisDeudores.database.DeudorDAO()
         listDeudores = deudorDAO.getDeudores()
 
-        val deudoresRVAdapter = DeudoresRVAdapter(listDeudores as ArrayList<Deudor>)
+        deudoresRVAdapter = DeudoresRVAdapter(listDeudores as ArrayList<Deudor>)
         binding.deudoresRecyclerView.adapter = deudoresRVAdapter
 
+        //cargarDesdeDatabase()
+        //cargarDesdeFaribase()
+
         deudoresRVAdapter.notifyDataSetChanged()
+
+    }
+    /*
+    private fun cargarDesdeFaribase() {
+        val database = FirebaseDatabase.getInstance()
+        val myDeudoresRef= database.getReference("deudores")
+        listDeudores.clear()
+
+        val postListener = object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                for (dato: DataSnapshot in snapshot.children){
+                    val deudorServer = dato.getValue(DeudorServer::class.java)
+                    deudorServer?.let {
+                        listDeudores.add(it) }
+                }
+                deudoresRVAdapter.notifyDataSetChanged()
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+
+            }
+        }
+
+        myDeudoresRef.addValueEventListener(postListener)
+    }*/
+
+
+    private fun cargarDesdeDatabase() {
+        val deudorDAO = MisDeudores.database.DeudorDAO()
+        listDeudores = deudorDAO.getDeudores()
     }
 }

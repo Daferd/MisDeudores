@@ -10,8 +10,10 @@ import com.daferarevalo.misdeudores.MisDeudores
 import com.daferarevalo.misdeudores.R
 import com.daferarevalo.misdeudores.data.dataBase.dao.UsuarioDAO
 import com.daferarevalo.misdeudores.data.dataBase.entities.Usuario
+import com.daferarevalo.misdeudores.data.server.Usuarios
 import com.daferarevalo.misdeudores.ui.login.LoginActivity
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.activity_registro.*
 import java.sql.Types.NULL
 
@@ -37,8 +39,7 @@ class RegistroActivity : AppCompatActivity() {
             val nombre = nombreEditText.text.toString()
             val correo = correoEditText.text.toString()
             val contrasena = contrasenaEditText.text.toString()
-            //registroEnFirebase(correo,contrasena)
-            //verificarCamposvacios(nombre,correo,contrasena)
+
             if (nombre.isEmpty() || nombre.isBlank()) {
                 nombre_edit_text_layout.error = getString(R.string.ingreseNombre)
             } else if (correo.isEmpty() || correo.isBlank()) {
@@ -52,8 +53,11 @@ class RegistroActivity : AppCompatActivity() {
                 nombre_edit_text_layout.error = null
                 correo_edit_text_layout.error = null
                 contrasena_edit_text_layout.error = null
+                //registroEnFirebase(correo,contrasena,nombre)
+
                 val usuarioDAO: UsuarioDAO = MisDeudores.dataBase1.UsuarioDAO()
                 val correoRegistro = usuarioDAO.searchCorreo(correo)
+
                 if (correoRegistro != null) {
                     Toast.makeText(this, "Usuario registrado", Toast.LENGTH_SHORT).show()
                 } else {
@@ -85,11 +89,13 @@ class RegistroActivity : AppCompatActivity() {
 
     }
 
-    private fun registroEnFirebase(correo: String, contrasena: String) {
+    private fun registroEnFirebase(correo: String, contrasena: String, nombre: String) {
         auth.createUserWithEmailAndPassword(correo, contrasena)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
                     Log.d(TAG, "createUserWithEmail:success")
+                    val uid = auth.currentUser?.uid
+                    crearUsuarioEnBaseDatos(uid, correo, nombre)
                     goToLoginActivity()
                 } else {
                     Log.w(TAG, "createUserWithEmail:failure", task.exception)
@@ -98,12 +104,21 @@ class RegistroActivity : AppCompatActivity() {
             }
     }
 
+    private fun crearUsuarioEnBaseDatos(uid: String?, correo: String, nombre: String) {
+        val database = FirebaseDatabase.getInstance()
+        val myUsersReference = database.getReference("usuarios")
+
+        val usuario = Usuarios(uid, nombre, correo)//Usuario(uid,nombre,correo)
+        uid?.let {
+            myUsersReference.child(uid).setValue(usuario)
+        }
+    }
+
     fun goToLoginActivity() {
         val intent = Intent(this, LoginActivity::class.java)
         startActivity(intent)
         finish()
     }
-
 
     override fun onBackPressed() {
         super.onBackPressed()

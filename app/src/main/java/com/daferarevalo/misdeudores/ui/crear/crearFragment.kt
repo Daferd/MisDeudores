@@ -10,7 +10,9 @@ import com.daferarevalo.misdeudores.MisDeudores
 import com.daferarevalo.misdeudores.R
 import com.daferarevalo.misdeudores.data.dataBase.dao.DeudorDAO
 import com.daferarevalo.misdeudores.data.dataBase.entities.Deudor
+import com.daferarevalo.misdeudores.data.server.DeudorServer
 import com.daferarevalo.misdeudores.databinding.FragmentCrearBinding
+import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.fragment_crear.*
 import java.sql.Types.NULL
 
@@ -49,13 +51,35 @@ class crearFragment : Fragment() {
                 nombreEditTextLayout.error = null
                 telefonoEditTextLayout.error = null
                 valorDeudaEditTextLayout.error = null
-                val deudor = Deudor(NULL, nombre, telefono, valor.toLong())
-                val deudorDAO: DeudorDAO = MisDeudores.database.DeudorDAO()
-
-                deudorDAO.insertDeudor(deudor)
+                guardarDeudorEnDatabase(nombre, telefono, valor.toLong())
+                //guardarDeudorEnFirebase(nombre,telefono,valor.toLong())
                 Toast.makeText(context, "Guardado", Toast.LENGTH_SHORT).show()
             }
         }
+    }
+
+    private fun guardarDeudorEnFirebase(nombre: String, telefono: String, valor: Long) {
+        val database = FirebaseDatabase.getInstance()
+        val myDeudorRef = database.getReference("deudores")
+
+        val id = myDeudorRef.push().key
+        val deudorServer = DeudorServer(id, nombre, telefono, valor)
+
+        id?.let { myDeudorRef.child(id).setValue(deudorServer) }
+        cleanViews()
+    }
+
+    private fun cleanViews() {
+        binding.nombreEditText.setText("")
+        binding.telefonoEditText.setText("")
+        binding.valorDeudaEditText.setText("")
+    }
+
+    private fun guardarDeudorEnDatabase(nombre: String, telefono: String, valor: Long) {
+        val deudor = Deudor(NULL, nombre, telefono, valor.toLong())
+        val deudorDAO: DeudorDAO = MisDeudores.database.DeudorDAO()
+
+        deudorDAO.insertDeudor(deudor)
     }
 
 }
